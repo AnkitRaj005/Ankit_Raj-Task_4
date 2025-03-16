@@ -11,7 +11,7 @@ const User = () => {
   useEffect(()=>{
 
     const fetchData = async()=>{
-        const response = await axios.get("https://simple-api-backend.onrender.com");
+        const response = await axios.get("https://simple-api-backend.onrender.com/");
         setUsers(response.data);
     }
 
@@ -20,7 +20,7 @@ const User = () => {
   },[])
 
   const deleteUser = async(userId) =>{
-      await axios.delete(`https://simple-api-backend.onrender.com${userId}`)
+      await axios.delete(`https://simple-api-backend.onrender.com/${userId}`)
       .then((respones)=>{
         setUsers((prevUser)=> prevUser.filter((user)=> user._id !== userId))
         toast.success(respones.data.msg, {position: 'top-right'})
