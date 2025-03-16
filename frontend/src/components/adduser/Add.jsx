@@ -23,7 +23,7 @@ const Add = () => {
 
   const submitForm = async(e) =>{
     e.preventDefault();
-    await axios.post("https://simple-api-backend.onrender.com", user)
+    await axios.post("https://simple-api-backend.onrender.com/", user)
     .then((response)=>{
        toast.success(response.data.msg, {position:"top-right"})
        navigate("/")
